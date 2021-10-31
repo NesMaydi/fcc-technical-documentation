@@ -1,0 +1,124 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+code {
+  font-family: Consolas, "courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+h2,
+h3 {
+  font-family: "Roboto Mono", monospace;
+  background-color: #202731;
+  color: #eee;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "left main"
+    "left main";
+}
+
+#navbar {
+  grid-area: left;
+  text-align: center;
+  background-color: #eee;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.nav-link {
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.nav-link:link {
+  color: #202731;
+}
+
+.nav-link:visited {
+  color: #202731;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+.nav-link:active {
+  transform: translateY(-5px);
+}
+
+#main-doc {
+  grid-area: main;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 425px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px auto;
+
+    grid-template-areas:
+      "up up"
+      "main main";
+  }
+
+  #navbar {
+    grid-area: up;
+    height: 100px;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    margin-right: 10px;
+  }
+  .nav-link:nth-last-child(1){
+      margin-right: 0;
+  }
+  .flex-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #main-doc {
+    margin-top: 80px;
+    grid-area: main;
+  }
+}
